@@ -21,7 +21,11 @@ const ProductListItem = ({ product }: ProductListItemProps) => {
     <Link href={`/menu/${product.id}`} asChild>
       <Pressable style={styles.Container}>
         <Image
-          source={{ uri: product.image || " " }}
+          source={{
+            uri:
+              product.image ||
+              " https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png",
+          }}
           style={styles.image}
           resizeMode="contain"
         />
@@ -44,13 +48,14 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "700",
     textAlign: "center",
   },
   price: {
     fontSize: 16,
     fontWeight: "500",
+ 
     textAlign: "center",
   },
   image: {
